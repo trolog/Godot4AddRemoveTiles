@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://bi7xasjjt8txs"]
+
+[ext_resource type="Script" path="res://GUI.gd" id="1_yvh3n"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_yvh3n")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -31.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="Button" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "Dirt"
+
+[node name="Button2" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "Grass"
+
+[node name="Button3" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "Wall"
+
+[connection signal="pressed" from="HBoxContainer/Button" to="." method="DirtPressed"]
+[connection signal="pressed" from="HBoxContainer/Button2" to="." method="GrassPressed"]
+[connection signal="pressed" from="HBoxContainer/Button3" to="." method="WallPressed"]
